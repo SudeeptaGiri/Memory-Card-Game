@@ -1,0 +1,45 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	height: 100vh;
+	background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+section {
+	display: grid;
+	grid-template-rows: 8rem 8rem 8rem 8rem;
+	grid-template-columns: 8rem 8rem 8rem 8rem;
+	row-gap: 2rem;
+	column-gap: 2rem;
+	margin-top: 2rem;
+	perspective: 800px;
+}
+h1 {
+	color: rgb(198, 183, 183);
+}
+.card {
+	position: relative;
+	transform-style: preserve-3d;
+	transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+	transform: rotateY(0deg);
+}
+.face,
+.back {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	pointer-events: none;
+}
+.back {
+	background: #3d3d3d;
+	backface-visibility: hidden;
+}
+.card-toggle {
+	transform: rotateY(180deg);
+}
